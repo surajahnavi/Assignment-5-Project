@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Mentoring - Faculty</title>
+    <style>
+        /* styles.css */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            font-family: calibri;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .logo img {
+            max-height: 80px;
+            width: 120px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links ul li {
+            margin-right: 20px;
+        }
+
+        .faculty-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .faculty-box {
+            width: 18%; /* Adjust width to fit items in a row */
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .faculty-box img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .faculty-details {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px; /* Adjust space between faculty boxes */
+        }
+
+        .faculty-details h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .faculty-details p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .add-course-btn {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .add-course-btn:hover {
+            background-color: #555;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                font-size: 12px;
+            }
+
+            header, nav, footer, .add-course-btn {
+                display: none; /* Hide elements not necessary for print */
+            }
+
+            .faculty-box {
+                page-break-inside: avoid;
+                margin: 0;
+                padding: 0;
+            }
+
+            .faculty-details img {
+                max-width: 100px;
+                height: auto;
+                border-radius: 0;
+            }
+
+            .faculty-section {
+                display: block;
+                width: 100%;
+            }
+
+            .faculty-box {
+                width: 100%;
+            }
+
+            .faculty-details {
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            p, h3 {
+                color: black;
+            }
+
+            @page {
+                margin: 10mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div style="display:flex">
+            <div class="logo">
+                <img src="./image.img/4.jpeg" alt="Eagle Mentoring Logo">
+            </div>
+            <div>
+                <h2 style="color: rgb(231, 214, 113);margin-left:10px">Online Tutor</h2>
+            </div>
+            <div style="margin-left:470px;margin-top:23px;font-size:20px">
+                <a href="./user.html" style="color:white;text-decoration:none">Home</a>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li>
+                    <form action="search.php" method="get">
+                        <input type="text" placeholder="Search Course" name="course_search" style="border-radius:5px;width:150px;height:30px">
+                        <input type="submit" value="Search">
+                    </form>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown()" class="dropbtn">My Account</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="./profile.html">Profile</a>
+                            <a href="./home.html">My Courses</a>
+                            <a href="./main.html">Main Page</a>
+                            <a href="./login.html">Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br><br>
+<main>
+    <div class="faculty-section">
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p1.jpeg" alt="John" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>John</h3>
+                <p>Data Science</p>
+                <p>Msc DataScience</p>
+                <a href="course.php?course=Data%20Science" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p2 (1).jpeg" alt="Charan" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Charan</h3>
+                <p>Big Data</p>
+                <p>M.Tech</p>
+                <a href="course.php?course=Big%20Data" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p3.jpeg" alt="Alexa" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Alexa</h3>
+                <p>Cyber</p>
+                <p>Msc</p>
+                <a href="course.php?course=Cyber" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p4.jpeg" alt="Jenny" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Jenny</h3>
+                <p>Python</p>
+                <p>Btech from IIT</p>
+                <a href="course.php?course=Python" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p6.jpeg" alt="Elina" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Elina</h3>
+                <p>UI/UX</p>
+                <p>BSC Computer science</p>
+                <a href="course.php?course=UI/UX" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p9.jpeg" alt="Jitesh" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Jitesh</h3>
+                <p>Maths</p>
+                <p>Msc Mathamatics</p>
+                <a href="course.php?course=Maths" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p7.jpeg" alt="Usha" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Usha</h3>
+                <p>AIML</p>
+                <p>M.Tech</p>
+                <a href="course.php?course=AIML" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p8.jpeg" alt="Abinash" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Abinash</h3>
+                <p>VLSI</p>
+                <p>M.Tech ECE</p>
+                <a href="course.php?course=VLSI" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <!-- Add more faculty members here -->
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p12.jpeg" alt="Rohit" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Rohit</h3>
+                <p>DAA</p>
+                <p>B.Tech</p>
+                <a href="course.php?course=DAA" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p10.jpeg" alt="Bhumika" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Bhumika</h3>
+                <p>DBMS</p>
+                <p>M.TEch</p>
+                <a href="course.php?course=DBMS" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p23.jpeg" alt="Salma" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Salma</h3>
+                <p>Java</p>
+                <p>PHD</p>
+                <a href="course.php?course=Java" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p13.jpeg" alt="Satya" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Satya</h3>
+                <p>R Language</p>
+                <p>B.com</p>
+                <a href="course.php?course=R%20Language" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p19 (1).jpeg" alt="Karthikeyan" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Karthikeyan</h3>
+                <p>IOT</p>
+                <p>Msc</p>
+                <a href="course.php?course=IOT" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p20.jpeg" alt="Amit" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Amit</h3>
+                <p>Chemistry</p>
+                <p>Msc Chemistry</p>
+                <a href="course.php?course=Chemistry" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p25.jpeg" alt="Pallavi" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Pallavi</h3>
+                <p>Machine Learning</p>
+                <p>Msc</p>
+                <a href="course.php?course=Machine%20Learning" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+        <div class="faculty-box">
+            <div class="faculty-details">
+                <img src="./image.img/p26.jpeg" alt="Sumathi" style="width: 150px; height: 150px; border-radius: 50%;">
+                <h3>Sumathi</h3>
+                <p>AI</p>
+                <p>M.Tech</p>
+                <a href="course.php?course=AI" class="add-course-btn">Add Course</a>
+            </div>
+        </div>
+    
+
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Tutor Finder. All rights reserved.</p>
+    <p>Need help? <a href="mailto:support@tutorfinder.com">Contact Support</a></p>
+</footer>
+
+<script>
+    // Function to toggle the visibility of the dropdown menu
+    function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    // Add pop-up message on "Add Course" button click and change text to "Added Course"
+    document.querySelectorAll('.add-course-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            this.textContent = 'Added Course'; // Change button text
+            this.style.backgroundColor = '#555'; // Optional: Change background color
+            alert('Course has been added!'); // Alert message
+        });
+    });
+</script>
+
+</body>
+</html>

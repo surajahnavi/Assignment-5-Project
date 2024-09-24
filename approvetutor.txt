@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Approve Tutors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: url('./image.img/r.png');
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4C007D;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4C007D;
+            margin-bottom: 30px;
+        }
+
+        .tutor-list {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .tutor-list th, .tutor-list td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .tutor-list th {
+            background-color: #4C007D;
+            color: white;
+        }
+
+        .tutor-list td {
+            background-color: #f9f9f9;
+        }
+
+        .tutor-list td:last-child {
+            text-align: center;
+        }
+
+        .approve-btn {
+            background-color: #28A745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .approve-btn:hover {
+            background-color: #218838;
+        }
+
+        .reject-btn {
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .reject-btn:hover {
+            background-color: #d9534f;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #4C007D;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #FFAF00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="./image.img/logos.png" alt="Logo"> <!-- Replace with your logo image URL -->
+        <span>Tutor Finder</span>
+    </div>
+    <nav>
+        <a href="./Admin.html" style="color: white; text-decoration: none; margin-left: 20px;">Home</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Approve Tutor Requests</h1>
+
+    <table class="tutor-list">
+        <thead>
+            <tr>
+                <th>Tutor Name</th>
+                <th>Email</th>
+                <th>Subject Expertise</th>
+                <th>Experience (Years)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bhumika Lavu</td>
+                <td>bhumika@example.com</td>
+                <td>Web Development</td>
+                <td>5</td>
+                <td>
+                    <button class="approve-btn">Approve</button>
+                    <button class="reject-btn">Reject</button>
+                </td>
+            </tr>
+            <tr>
+                <td>David Sabbath</td>
+                <td>david.s@example.com</td>
+                <td>Data Science</td>
+                <td>3</td>
+                <td>
+                    <button class="approve-btn">Approve</button>
+                    <button class="reject-btn">Reject</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Mary Johnson</td>
+                <td>mary.j@example.com</td>
+                <td>Mathematics</td>
+                <td>7</td>
+                <td>
+                    <button class="approve-btn">Approve</button>
+                    <button class="reject-btn">Reject</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="note">* Once a tutor is approved, they will be listed on the platform and students can contact them.</p>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Online Tutor Finder</p>
+    <p>Contact us at <a href="mailto:support@onlinetutorfinder.com">support@onlinetutorfinder.com</a></p>
+</footer>
+
+<script>
+    // Approve and Reject button functionality (simulated with an alert)
+    document.querySelectorAll('.approve-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            alert('Tutor approved successfully!');
+        });
+    });
+
+    document.querySelectorAll('.reject-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            alert('Tutor rejected successfully.');
+        });
+    });
+</script>
+
+</body>
+</html>
